@@ -110,7 +110,7 @@ function App() {
 			<div className="myId">
 				<TextField
 					id="filled-basic"
-					label="Name"
+					label="Nome"
 					variant="filled"
 					value={name}
 					onChange={(e) => setName(e.target.value)}
@@ -121,10 +121,9 @@ function App() {
 						Copiar ID
 					</Button>
 				</CopyToClipboard>
-        {me}
 				<TextField
 					id="filled-basic"
-					label="ID to call"
+					label="ID para Chamar"
 					variant="filled"
 					value={idToCall}
 					onChange={(e) => setIdToCall(e.target.value)}
@@ -132,13 +131,16 @@ function App() {
 				<div className="call-button">
 					{callAccepted && !callEnded ? (
 						<Button variant="contained" color="secondary" onClick={leaveCall}>
-							End Call
+							Finalizar Chamada
 						</Button>
-					) : (
-						<IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
+					) : (<></>
+						// <IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
+						// 	<PhoneIcon fontSize="large" />
+						// </IconButton>
+					)}
+          	<IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
 							<PhoneIcon fontSize="large" />
 						</IconButton>
-					)}
 					{idToCall}
 				</div>
 			</div>
@@ -147,7 +149,7 @@ function App() {
 						<div className="caller">
 						<h1 >{name} está te chamando...</h1>
 						<Button variant="contained" color="primary" onClick={answerCall}>
-							Answer
+							Aceitar
 						</Button>
 					</div>
 				) : null}

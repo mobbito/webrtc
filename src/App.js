@@ -123,7 +123,7 @@ function App() {
 				</CopyToClipboard>
 				<TextField
 					id="filled-basic"
-					label="ID para Chamar"
+					label="ID para chamar"
 					variant="filled"
 					value={idToCall}
 					onChange={(e) => setIdToCall(e.target.value)}
@@ -133,14 +133,11 @@ function App() {
 						<Button variant="contained" color="secondary" onClick={leaveCall}>
 							Finalizar Chamada
 						</Button>
-					) : (<></>
-						// <IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
-						// 	<PhoneIcon fontSize="large" />
-						// </IconButton>
-					)}
-          	<IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
+					) : (
+						<IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
 							<PhoneIcon fontSize="large" />
 						</IconButton>
+					)}
 					{idToCall}
 				</div>
 			</div>

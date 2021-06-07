@@ -118,7 +118,7 @@ function App() {
 				/>
 				<CopyToClipboard text={me} style={{ marginBottom: "2rem" }}>
 					<Button variant="contained" color="primary" startIcon={<AssignmentIcon fontSize="large" />}>
-						Copy ID {me}
+						Copiar ID
 					</Button>
 				</CopyToClipboard>
         {me}
@@ -145,7 +145,7 @@ function App() {
 			<div>
 				{receivingCall && !callAccepted ? (
 						<div className="caller">
-						<h1 >{name} is calling...</h1>
+						<h1 >{name} está te chamando...</h1>
 						<Button variant="contained" color="primary" onClick={answerCall}>
 							Answer
 						</Button>

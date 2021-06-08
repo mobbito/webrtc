@@ -71,7 +71,7 @@ function App() {
 	}
 
 	const answerCall =() =>  {
-		setCallAccepted(true)
+		
 		const peer = new Peer({
 			initiator: false,
 			trickle: false,
@@ -80,12 +80,14 @@ function App() {
 		peer.on("signal", (data) => {
 			socket.emit("answerCall", { signal: data, to: caller })
 		})
+
 		peer.on("stream", (stream) => {
 			userVideo.current.srcObject = stream
 		})
 
 		peer.signal(callerSignal)
 		connectionRef.current = peer
+		setCallAccepted(true)
 	}
 
 	const leaveCall = () => {

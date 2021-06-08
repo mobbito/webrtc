@@ -51,6 +51,7 @@ function App() {
 		})
 
 		peer.on("signal", (data) => {
+			console.log(data)
 			socket.emit("callUser", {
 				userToCall: id,
 				signalData: data,
@@ -79,7 +80,7 @@ function App() {
 			stream: stream
 		})
 		console.log(peer)
-		
+
 		peer.on("signal", (data) => {
 			socket.emit("answerCall", { signal: data, to: caller })
 		})

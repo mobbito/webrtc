@@ -10,7 +10,7 @@ import io from "socket.io-client"
 import "./App.css"
 
 
-const socket = io.connect('https://api.tradertrainner.com')
+const socket = io.connect('http://localhost:5000')
 function App() {
 	const [ me, setMe ] = useState("")
 	const [ stream, setStream ] = useState()
@@ -45,6 +45,16 @@ function App() {
 
 	const callUser = (id) => {
 		const peer = new Peer({
+			iceServers: [
+				{
+					urls: ["turns:turnserver.example.org", "turn:turnserver.example.org"],
+					username: "webrtc",
+					credential: "turnpassword"
+				},
+				{
+					urls: "stun: stunserver.example.org"
+				}
+			],
 			initiator: true,
 			trickle: false,
 			stream: stream,
@@ -73,7 +83,18 @@ function App() {
 
 	const answerCall =() =>  {
 		
+
 		const peer = new Peer({
+			iceServers: [
+				{
+					urls: ["turns:turnserver.example.org", "turn:turnserver.example.org"],
+					username: "webrtc",
+					credential: "turnpassword"
+				},
+				{
+					urls: "stun: stunserver.example.org"
+				}
+			],
 			initiator: false,
 			trickle: false,
 			stream: stream

@@ -10,7 +10,7 @@ import io from "socket.io-client"
 import "./App.css"
 
 
-const socket = io.connect('https://determined-hopper-dd2a69.netlify.app/')
+const socket = io.connect('http://54.207.144.117:5000')
 function App() {
 	const [ me, setMe ] = useState("")
 	const [ stream, setStream ] = useState()

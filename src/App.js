@@ -9,7 +9,8 @@ import Peer from "simple-peer"
 import io from "socket.io-client"
 import "./App.css"
 
-const socket = io.connect('/')
+
+const socket = io.connect('https://teste.deubom.com.br')
 function App() {
 	const [ me, setMe ] = useState("")
 	const [ stream, setStream ] = useState()
